@@ -1,0 +1,39 @@
+.mat-card-header {
+  justify-content: space-between;
+}
+.mat-card-header .mat-card-title {
+  display: inline-block;
+}
+.mat-card-header .mat-card-subtitle {
+  display: inline-block;
+  margin-left: 20px;
+}
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+.mat-card-actions {
+  text-align: center;
+}
+.mat-card-actions p {
+  text-align: left;
+  margin-left: 40px;
+}
+.mat-form-field {
+  width: 90%;
+}
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #bbb;
+}
+::ng-deep
+  .mat-form-field-appearance-outline.mat-focused
+  .mat-form-field-outline-thick {
+  color: #777;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+  color: #777;
+}
+
+.load-more {
+  margin-top: 10px;
+  text-align: center;
+}

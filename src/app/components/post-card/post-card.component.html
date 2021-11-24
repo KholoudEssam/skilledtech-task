@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Post title </mat-card-title>
+    <mat-card-subtitle>By username</mat-card-subtitle>
+    <span class="created-at">9 hours ago</span>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+      Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+      Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <p>{{ (docsCount$ | async) || 0 }} comments</p>
+    <mat-form-field appearance="outline">
+      <mat-label>Leave comment</mat-label>
+      <textarea #comment (keydown.enter)="addComment()" matInput></textarea>
+    </mat-form-field>
+  </mat-card-actions>
+  <p>last {{ (comments$ | async)?.length }} comments</p>
+  <app-user-comment
+    *ngFor="let c of comments$ | async as comments"
+    [comment]="c"
+  ></app-user-comment>
+
+  <div class="load-more">
+    <button (click)="loadMore()" mat-button [disabled]="noData$ | async">
+      Load more
+    </button>
+  </div>
+</mat-card>
